@@ -1,0 +1,5 @@
+,0
+accuracy,0.156875
+jaccard_sim,0.32533854166666665
+average_precision_score,0.19545282126076113
+hamming_loss,0.11518382352941177

@@ -1,0 +1,19 @@
+At this point there is little leak in the pipeline. To continue do the following:
+
+1. Install Mallet http://mallet.cs.umass.edu/topics.php and make sure it works.
+
+2. Import the text files from 5_sample/txt into Mallet format by copy and pasting the following command into your terminal/command-line (substitute XXX beforehand):
+bin\mallet import-dir --input XXX\filmgenre_classification\5_sample\txt --output XXX\filmgenre_classification\7_features\sample_1930-2010.mallet --keep-sequence --remove-stopwords --extra-stopwords XXX\filmgenre_classification\6_extractFeatures\morestopwords.txt
+
+3. To train the topics copy and paste the following command into your terminal/command-line:
+
+bin\mallet train-topics --input XXX\filmgenre_classification\7_features\sample_1930-2010.mallet --output-topic-keys XXX\filmgenre_classification\7_features\sample_1930-2010_topwords_70t_500i.csv  --output-doc-topics XXX\filmgenre_classification\7_features\sample_1930-2010_topicdistr_70t_500i.csv --topic-word-weights-file XXX\filmgenre_classification\7_features\sample_1930-2010_wordweights.csv --num-topics 70 --num-threads 4 --num-iterations 5000 --optimize-interval 500 
+
+
+NOTE: You can tweak the parameters like "num-topics" or "optimize-interval" by yourself. For test reasons those were also integrated in the filename. If you just want to use one setting, exclude them from the filenames. The most important output files are topic-keys, doc-topics and topic-word-weights, because they are used later on. For more parameters and options, check the Mallet Documentation. 
+
+Here is a list with the best working parameters for several tested samples:
+1930-2010: Topics: 50, Intervall: 50 
+1970-2010: Topics: 60, Intervall: 100 
+2000-2010: Topics: 70, Intervall: 1000
+genre-based (no Drama/Comedy): Topics: 50, Intervall: 1000

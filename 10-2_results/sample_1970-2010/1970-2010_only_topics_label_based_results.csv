@@ -1,0 +1,6 @@
+,0
+label_ranking_average_precision_score,0.7633158882324803
+label_cardinality,2.0840625
+label_density,0.12259191176470588
+label_ranking_loss,0.08123418898809524
+coverage_error,4.1375
